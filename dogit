@@ -1,0 +1,6 @@
+git add *
+git add .travis.yml
+git add .gitignore
+git commit -S -m "hello world"
+git push origin master
+
