@@ -13,6 +13,6 @@ add_compile_options(
 project(simple)
 
 add_executable (
-  hello2.executable
-  hello2.cpp
+  travis-try.executable
+  travis-try.cpp
 )
