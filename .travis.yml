@@ -30,4 +30,3 @@ deploy:
   file: hello2.executable
   on:
     repo: zdrnja/t3
-    tags: true
