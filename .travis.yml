@@ -14,19 +14,15 @@ addons:
     - cmake
     - upx
 script:
-  # Export CC and CXX to tell cmake which compiler to use
-  - export CC=/usr/bin/gcc-7
-  - export CXX=/usr/bin/g++-7
-  # Check versions of gcc, g++ and cmake
-  - gcc -v && g++ -v && cmake --version
-  # Run your build commands next
-  - cmake .
-  - make
-  - ./hello2.executable
+- export CC=/usr/bin/gcc-7
+- export CXX=/usr/bin/g++-7
+- gcc -v && g++ -v && cmake --version
+- cmake .
+- make
+- "./hello2.executable"
 deploy:
   provider: releases
-  token:
-    secure: Btxhm4Fov/YjtcPqZ5F2TFqj+B1yV5dqas8MdIsQSoK+eHJWm2vk8UzyvhwZdC2RJXvlMbVfoTI5yKFXhB9exJ2VyAhe5wA2/VoL0jqslPm2ljpmcyu1WrAVZ9OAAqwNw9htEfKFDgdHlsHwi1969u9lykjC9mYYf0aqGP4V/cUsoG6uX7aVhJjOCwN5BU0rdYwhMTW3ijSB43T6eHH7VcCCUvtTx6gQvA60e/DaY5EwrYSQFIGv2ESSLM88lZzESh7Okk2ylfDR9V19Xw7LEzti0AxCUIPzmV/lWR4MZmNnD0mrQKU+LzBFHg+yFCR5VpYts1IYohiFz+fwidgjCSThUiXC8n2CtZxyf3JpguqATkj1SwUWnVcIcRWIOZb/KK/2wYrlJWMT3KmiNPj1tjL6z1ndNYsmO0gI37icFi3Aoj130I0cm+2wu2WxYOak8w6oO2vzsvLA4x3d7NzfbiQ/4kJ2h/Cz+ItbSZ8LRdyvuK0gOwxfihyuyrNwRFtm7cqHfF1BHBtB+h/Uq8fgJZUmQOn7Ep7nXBSvKNYNOBGo9TNFm9dzw+KsMo7CxmZTN/b02HuanM+3ZEXQLbVa6AlGy2zZoNaHhnFScdY7oT2kxY9D0CLblkh8dgeTMkjc18q3MVY5kWzAjCVSqiDAM0LSKf8VlQtBruGh9WoOIoc=
+  api_key:
+    secure: 1y4SW8lWh3Amc7AaK0jnzhlOTadorNbC4lvYsZR4E3Zzueyxm1M0KJ487m3HcfyEgNh4PPDmc+NWvgDW3q+WpeLpzb9fvoutE//3ge5SdYSFQbYs1binOjMK0LGaLCea0uK0YI2ZfhXBr0cyIE6l4eRRNLKCpPzDgQEEOk00GIA8zcm8HsGSifZqa0XbZif/nhtexLPv/tCooBevbfxoNFhmsifqyo83CPgFhQqN8jnv8oz4nPVm4WD3XX/eS532KRI4sjXNZ2lta1xdu0Hmx0k3y2zIHtGFuEHCEzBLUFhYC48hauKkhSROTCThCpxbtDPll1OD9LvVP+TIDRWLHi/DDzLMg5abcaFVGBGUIWuHZRqeGW5ftH2SZHFiCCZ4a9GKDesWV+rjrukjqp+JVHe18A4VNg2czQRJLtLDBfo05X6bih51Bk59Gs6U9wSES+Wxt8fP6ShSlBjSMOi49biGu4YyKmb6phZYyPv5GlwKlBYaIXWAI2L+PaQ47G+htfSjTkQcLsvd6zpn/3f/1TLVuCzVFgdydmgyQTZ2DphBHlxYnvAVP9Rpo+VAEwcRpe8OTrsvIqtj8ifOrvwb1/FaeiyQQ8kU9XuNIxEe+LX86qZIXbBh8q9h7pBGWRI+9yNmDamijz22YNdm3LUsSeYzN4+75YZQLahlVwrGhTM=
   file: hello2.executable
-  on:
-    repo: zdrnja/t3
+  skip_cleanup: 'true'
