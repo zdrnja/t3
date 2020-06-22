@@ -1,8 +1,6 @@
 git add *
 git add .travis.yml
 git add .gitignore
-export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')}
-git tag $TRAVIS_TAG
 git commit -S -m "hello world"
 git push origin master 
  
