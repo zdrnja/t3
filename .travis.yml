@@ -21,10 +21,10 @@ script:
 - make
 - ./travis-try.executable
 - echo "travis echo try" > echofromtravis.txt
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
 deploy:
   provider: releases
   api_key:
     secure: 1y4SW8lWh3Amc7AaK0jnzhlOTadorNbC4lvYsZR4E3Zzueyxm1M0KJ487m3HcfyEgNh4PPDmc+NWvgDW3q+WpeLpzb9fvoutE//3ge5SdYSFQbYs1binOjMK0LGaLCea0uK0YI2ZfhXBr0cyIE6l4eRRNLKCpPzDgQEEOk00GIA8zcm8HsGSifZqa0XbZif/nhtexLPv/tCooBevbfxoNFhmsifqyo83CPgFhQqN8jnv8oz4nPVm4WD3XX/eS532KRI4sjXNZ2lta1xdu0Hmx0k3y2zIHtGFuEHCEzBLUFhYC48hauKkhSROTCThCpxbtDPll1OD9LvVP+TIDRWLHi/DDzLMg5abcaFVGBGUIWuHZRqeGW5ftH2SZHFiCCZ4a9GKDesWV+rjrukjqp+JVHe18A4VNg2czQRJLtLDBfo05X6bih51Bk59Gs6U9wSES+Wxt8fP6ShSlBjSMOi49biGu4YyKmb6phZYyPv5GlwKlBYaIXWAI2L+PaQ47G+htfSjTkQcLsvd6zpn/3f/1TLVuCzVFgdydmgyQTZ2DphBHlxYnvAVP9Rpo+VAEwcRpe8OTrsvIqtj8ifOrvwb1/FaeiyQQ8kU9XuNIxEe+LX86qZIXbBh8q9h7pBGWRI+9yNmDamijz22YNdm3LUsSeYzN4+75YZQLahlVwrGhTM=
-  file: travis-try.executable
-  file: echofromtravis.txt
+  file: ./echofromtravis.txt
   skip_cleanup: 'true'
