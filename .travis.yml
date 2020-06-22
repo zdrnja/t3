@@ -9,13 +9,13 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - gcc-7
-    - g++-7
+    - gcc-10.1
+    - g++-10.1
     - cmake
     - upx
 script:
-- export CC=/usr/bin/gcc-7
-- export CXX=/usr/bin/g++-7
+- export CC=/usr/bin/gcc-10.1
+- export CXX=/usr/bin/g++-10.1
 - gcc -v && g++ -v && cmake --version
 - cmake .
 - make
@@ -32,6 +32,3 @@ deploy:
   skip_cleanup: true
   file_glob: true
   file: "travis-try.executable"
-
-after_deploy:
-- ls -hal
